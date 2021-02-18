@@ -74,17 +74,17 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     conn.menu = conn.menu ? conn.menu : {}
     let before = conn.menu.before || `
 ╭─「 ${conn.getName(conn.user.jid)} 」
-│ Olá, %name!
+│ Hai, %name!
 │
 │ *%exp XP*
-│ Seu Limite *%limit Limite*
+│ Seu Limite *%limit Limit*
 │
 │ Data: *%week %weton, %date*
 │ Hora: *%time*
 │
 │ Tempo de atividade: *%uptime*
 │ Tempo de atividade principal: *%muptime*
-│ Database: %totalreg número
+│ Usuário Registrado: %totalreg número
 ╰────
 %readmore`
     let header = conn.menu.header || '╭─「 %category 」'
@@ -115,7 +115,7 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     text = text.replace(new RegExp(`%(${Object.keys(replace).join`|`})`, 'g'), (_, name) => replace[name])
     conn.reply(m.chat, text.trim(), m)
   } catch (e) {
-    conn.reply(m.chat, 'Desculpe, o menu está errado', m)
+    conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
   }
 }

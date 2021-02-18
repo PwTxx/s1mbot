@@ -1,9 +1,9 @@
 let handler = async (m, { conn }) => {
   if (new Date - global.DATABASE._data.users[m.sender].lastclaim > 86400000) {
     global.DATABASE._data.users[m.sender].exp += 500
-    m.reply('+5000 XP')
+    m.reply('+500 XP')
     global.DATABASE._data.users[m.sender].lastclaim = new Date * 1
-  } else m.reply('Você reivindicou reivindicações diárias hoje')
+  } else m.reply('Anda sudah mengklaim klaim harian hari ini')
 }
 handler.help = ['daily', 'claim']
 handler.tags = ['xp']

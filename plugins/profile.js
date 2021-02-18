@@ -11,13 +11,13 @@ let handler = async (m, { conn }) => {
     let about = (await conn.getStatus(who)).status
     let { limit, exp, lastclaim } = global.DATABASE.data.users[m.sender]
     let str = `
-Nome: ${name} (@${who.replace(/@.+/, '')})
-Info: ${about}
-Número: ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
+Name: ${name} (@${who.replace(/@.+/, '')})
+About: ${about}
+Number: ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
 Link: https://wa.me/${who.split`@`[0]}
 XP: ${exp}
-Limite: ${limit}
-Última Reivindicação: ${new Date(lastclaim)}
+Limit: ${limit}
+Last Claim: ${new Date(lastclaim)}
 `.trim()
     let mentionedJid = [who]
     conn.sendFile(m.chat, pp, 'pp.jpg', str, m, false, { contextInfo: { mentionedJid }})

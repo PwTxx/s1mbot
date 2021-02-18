@@ -9,7 +9,7 @@ let handler  = async (m, { conn, text }) => {
     })
   }
 }
-handler.help = ['ttp <texto>']
+handler.help = ['ttp <teks>']
 handler.tags = ['sticker']
 handler.command = /^ttp$/i
 handler.owner = false
