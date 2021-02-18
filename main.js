@@ -224,7 +224,7 @@ conn.handler = async function (m) {
           console.log(e)
           if (e) m.reply(util.format(e))
         } finally {
-          if (m.limit) m.reply(+ m.limit + ' Limites se aplicam')
+          if (m.limit) m.reply(+ m.limit + ' Limit terpakai')
         }
   			break
   		}
@@ -349,13 +349,13 @@ conn.on('close', () => {
 global.dfail = (type, m, conn) => {
   let msg = {
     rowner: 'Este comando só pode ser usado por _*OWWNER!1!1!*_',
-    owner: 'Este comando só pode ser usado por _*Dono Bot*_!',
+    owner: 'Este comando só pode ser usado por _*Owner Bot*_!',
     mods: 'Este comando só pode ser usado por _*Moderator*_ !',
     premium: 'Este comando é apenas para membros _*Premium*_ !',
     group: 'Este comando só pode ser usado em grupos!',
     private: 'Este comando só pode ser usado em Chats Privados!',
     admin: 'Este comando é para *Admin* grupo!',
-    botAdmin: 'Faça bot como *Admin* usar o comandoi!'
+    botAdmin: 'Faça bot como *Admin* para usar este comando!'
   }[type]
   if (msg) conn.reply(m.chat, msg, m)
 }
