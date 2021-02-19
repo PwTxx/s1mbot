@@ -269,8 +269,8 @@ conn.handler = async function (m) {
     }
   }
 }
-conn.welcome = 'Olá, @user!\nBem vindo ao grupo @subject'
-conn.bye = 'Adeus @user!'
+conn.welcome = 'Hai, @user!\nSelamat datang di grup @subject'
+conn.bye = 'Selamat tinggal @user!'
 conn.onAdd = async function ({ m, participants }) {
   let chat = global.DATABASE._data.chats[m.key.remoteJid]
   if (!chat.welcome) return
@@ -348,14 +348,14 @@ conn.on('close', () => {
 
 global.dfail = (type, m, conn) => {
   let msg = {
-    rowner: 'Este comando só pode ser usado por _*OWWNER!1!1!*_',
-    owner: 'Este comando só pode ser usado por _*Owner Bot*_!',
-    mods: 'Este comando só pode ser usado por _*Moderator*_ !',
-    premium: 'Este comando é apenas para membros _*Premium*_ !',
-    group: 'Este comando só pode ser usado em grupos!',
-    private: 'Este comando só pode ser usado em Chats Privados!',
-    admin: 'Este comando é para *Admin* grupo!',
-    botAdmin: 'Faça bot como *Admin* para usar este comando!'
+    rowner: 'Perintag ini hanya dapat digunakan oleh _*OWWNER!1!1!*_',
+    owner: 'Perintah ini hanya dapat digunakan oleh _*Owner Bot*_!',
+    mods: 'Perintah ini hanya dapat digunakan oleh _*Moderator*_ !',
+    premium: 'Perintah ini hanya untuk member _*Premium*_ !',
+    group: 'Perintah ini hanya dapat digunakan di grup!',
+    private: 'Perintah ini hanya dapat digunakan di Chat Pribadi!',
+    admin: 'Perintah ini hanya untuk *Admin* grup!',
+    botAdmin: 'Jadikan bot sebagai *Admin* untuk menggunakan perintah ini!'
   }[type]
   if (msg) conn.reply(m.chat, msg, m)
 }
