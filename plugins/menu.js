@@ -77,14 +77,16 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
 │ Hai, %name!
 │
 │ *%exp XP*
-│ Seu Limite *%limit Limit*
+│ Seu Limite *%limit Limite*
 │
 │ Data: *%week %weton, %date*
-│ Hora: *%time*
+│ Horas: *%time*
 │
 │ Tempo de atividade: *%uptime*
 │ Tempo de atividade principal: *%muptime*
-│ Usuário Registrado: %totalreg número
+│ Registrado: %totalreg número
+│ Github:
+│ %github
 ╰────
 %readmore`
     let header = conn.menu.header || '╭─「 %category 」'
